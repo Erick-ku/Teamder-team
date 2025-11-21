@@ -1,8 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-// --- CORRECCIÓN DE IMPORTS ---
-// Al usar { Llaves }, obligamos a React a buscar el nombre exacto que le dio Figma.
-
 import { Login } from './Components/inicio.jsx/Figma/components/Login';
 import { SignUp } from './Components/inicio.jsx/Figma/components/SignUp';
 import { ForgotPassword } from './Components/inicio.jsx/Figma/components/ForgotPassword';
@@ -12,16 +8,16 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Login sigue siendo la página principal */}
+        {/* Login */}
         <Route path="/" element={<Login />} />
 
-        {/* Registro usa el componente SignUp */}
+        {/* Registro */}
         <Route path="/registro" element={<SignUp />} />
 
-        {/* Recuperar usa el componente ForgotPassword */}
+        {/* Recuperar Contraseña */}
         <Route path="/recuperar" element={<ForgotPassword />} />
 
-        {/* Inicio (Dashboard) usa el componente MainMenu */}
+        {/* Inicio / Dashboard */}
         <Route path="/inicio" element={<MainMenu />} />
       </Routes>
     </BrowserRouter>
