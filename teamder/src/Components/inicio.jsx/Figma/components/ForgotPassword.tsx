@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { Mail, ArrowLeft, ShieldCheck } from 'lucide-react';
-import teamderLogo from 'figma:asset/5b545e66f6c269c7e1d20d0231f9f7a657db4258.png';
+import teamderLogo from "../../../assets/logo.png";
 
 interface ForgotPasswordProps {
   onBack: () => void;
