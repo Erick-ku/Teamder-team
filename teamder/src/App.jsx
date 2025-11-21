@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-
+// --- CORRECCIÓN DE IMPORTS ---
+// Al usar { Llaves }, obligamos a React a buscar el nombre exacto que le dio Figma.
 
 import { Login } from './Components/inicio.jsx/Figma/components/Login';
 import { SignUp } from './Components/inicio.jsx/Figma/components/SignUp';
