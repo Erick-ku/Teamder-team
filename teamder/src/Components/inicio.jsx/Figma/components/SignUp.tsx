@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
@@ -9,6 +10,7 @@ interface SignUpProps {
 }
 
 export function SignUp({ onBack }: SignUpProps) {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
 
   const handleEmailSignUp = (e: React.FormEvent) => {
@@ -144,8 +146,9 @@ export function SignUp({ onBack }: SignUpProps) {
             <Button
               type="button"
               variant="outline"
-              onClick={onBack}
+              onClick={() => navigate('/')}
               className="w-full border-purple-300 text-purple-600 hover:bg-purple-50 rounded-lg h-12 flex items-center justify-center gap-2"
+              
             >
               <ArrowLeft className="w-5 h-5" />
               Regresar al inicio

@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
@@ -9,6 +10,7 @@ interface ForgotPasswordProps {
 }
 
 export function ForgotPassword({ onBack }: ForgotPasswordProps) {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [verificationCode, setVerificationCode] = useState('');
   const [step, setStep] = useState<'email' | 'verification'>('email');
@@ -97,7 +99,7 @@ export function ForgotPassword({ onBack }: ForgotPasswordProps) {
               <Button
                 type="button"
                 variant="outline"
-                onClick={onBack}
+                onClick={() => navigate('/')}
                 className="w-full border-purple-300 text-purple-600 hover:bg-purple-50 rounded-lg h-12 flex items-center justify-center gap-2"
               >
                 <ArrowLeft className="w-5 h-5" />
