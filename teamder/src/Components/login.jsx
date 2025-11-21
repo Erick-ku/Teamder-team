@@ -1,3 +1,4 @@
+import logo from './assets/logo.png';
 import { useState } from 'react';
 import { Mail, Lock, Eye, EyeOff, User } from 'lucide-react';
 
@@ -16,12 +17,9 @@ export default function Login({ onLogin }) {
     <div className="min-h-screen bg-gradient-to-br from-purple-200 via-purple-100 to-purple-50 flex items-center justify-center px-4">
       <div className="w-full max-w-md">
         
-        {/* Logo y título */}
         <div className="flex flex-col items-center mb-8">
           <div className="w-24 h-24 mb-4 flex items-center justify-center">
-            {/* Usamos el logo de Vite que SIEMPRE existe en /vite.svg */}
-            <img
-              src="/vite.svg" 
+           <img src={logo}
               alt="Logo"
               className="w-full h-full object-contain"
             />
