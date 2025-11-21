@@ -1,9 +1,11 @@
+
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { Mail, Lock, Eye, EyeOff, User } from 'lucide-react';
 import teamderLogo from "../../../assets/logo.png";
+
 
 interface LoginProps {
   onLogin: () => void;
@@ -12,6 +14,7 @@ interface LoginProps {
 }
 
 export function Login({ onLogin, onForgotPassword, onSignUp }: LoginProps) {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -102,19 +105,21 @@ export function Login({ onLogin, onForgotPassword, onSignUp }: LoginProps) {
               <button
                 type="button"
                 className="text-purple-600 hover:text-purple-800 transition-colors"
-                onClick={onForgotPassword}
+                onClick={() => navigate('/recuperar')}
               >
                 ¿Olvidaste tu contraseña?
               </button>
             </div>
 
-            {/* Botón Iniciar sesión */}
-            <Button
-              type="submit"
-              className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white rounded-lg h-12 shadow-lg"
-            >
-              Iniciar sesión
-            </Button>
+
+<Button 
+  type="button"
+  className="w-full" 
+  onClick={() => navigate('/inicio')} 
+>
+  Iniciar sesión
+</Button>
+
 
             {/* Separador */}
             <div className="text-center text-purple-400">o</div>
@@ -124,7 +129,7 @@ export function Login({ onLogin, onForgotPassword, onSignUp }: LoginProps) {
               type="button"
               variant="outline"
               className="w-full border-purple-300 text-purple-600 hover:bg-purple-50 rounded-lg h-12"
-              onClick={onSignUp}
+             onClick={() => navigate('/registro')}
             >
               Crear una cuenta
             </Button>
