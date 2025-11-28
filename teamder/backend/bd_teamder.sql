@@ -67,6 +67,13 @@ CREATE TABLE IF NOT EXISTS `usuariosesion` (
 	`id_sesion` int NOT NULL,
 	PRIMARY KEY (`id_usuario`, `id_sesion`)
 );
+INSERT INTO interes (nombre_interes) VALUES ('teamder_bd');
+
+INSERT INTO usuario (nombre, correo, carrera, semestre, id_interes) 
+
+VALUES ('Juan Perez', 'juan@test.com', 'Ingeniería', '3ro', 1);
+
+SELECT * FROM usuario;
 
 
 ALTER TABLE `usuario` ADD CONSTRAINT `usuario_fk5` FOREIGN KEY (`id_interes`) REFERENCES `interes`(`id_interes`);
